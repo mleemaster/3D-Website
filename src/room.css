@@ -1,4 +1,30 @@
-body {
-    background-color: #232020;
+@font-face {
+    font-family: "applemono";
+    src: url('/fonts/apple2mono.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
+
+.dash {
+    position: absolute;
+    color: white;
+    font-family: 'applemono';
+    text-align: center;
+}
+
+.dash div {
+    background-color: black;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 5px 10px;
+    display: inline-block;
+}
+
+#date {
+    width: 400px; 
+    text-align: center; 
+}
+
+
 
