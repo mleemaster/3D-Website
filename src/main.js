@@ -2,11 +2,12 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { gsap } from 'gsap';
 
 // Set up the scene, camera, and renderer
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 2000);
-camera.position.set(1.5,1.8,-1.9);
+camera.position.set(10.5, 12.6,-13.3);
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
@@ -30,9 +31,18 @@ scene.add(light, spotLight);
 
 // Load environment model
 loader.load(
-    '/assets/models/EnvironmentFinal5.glb',
+    '/assets/models/EnvironmentProd.glb',
     (gltf) => {
         scene.add(gltf.scene);
+
+        gsap.to(camera.position, {
+            duration: 5,    // Duration of the zoom effect
+            x: 1.5,           // Target x position
+            y: 1.8,           // Target y position
+            z: -1.9,          // Target z position
+            ease: "power2.out", // Ease for smoothness
+            onUpdate: () => camera.lookAt(0, 1, 0) // Keep camera focused on the target
+        });
     },
     (xhr) => {
         console.log((xhr.loaded / xhr.total * 100) + '% loaded');
