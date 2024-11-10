@@ -9,19 +9,37 @@
     position: absolute;
     color: white;
     font-family: 'applemono';
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.dash div {
+#name {
     background-color: black;
-    margin-bottom: 5px;
-    margin-top: 10px;
-    margin-left: 10px;
+    text-align: center;
     padding: 5px 10px;
-    display: inline-block;
+    width: 300px;
+    margin: 10px;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5px;
+    text-align: center;
+}
+.links > div {
+    background-color: black;
+    padding: 5px 10px;
+    margin: 10px;
 }
 
 #date {
+    background-color: black;
+    margin-left: 10px;
+    padding: 5px 10px;
     width: 400px; 
     text-align: center; 
 }
