@@ -1,6 +1,6 @@
 @font-face {
     font-family: "applemono";
-    src: url('/fonts/apple2mono.ttf') format('truetype');
+    src: url('./fonts/apple2mono.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
