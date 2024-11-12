@@ -11,7 +11,7 @@ function calculatePercentage() {
         progress += 2;
         displayProgress(progress)
 
-        if (progress >= 150) {
+        if (progress >= 350) {
             clearInterval(interval)
             hideLoadingScreen();
         }
