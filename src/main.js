@@ -6,7 +6,12 @@ import { gsap } from 'gsap';
 
 // Set up the scene, camera, and renderer
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 2000);
+let camera;
+if (window.innerWidth <= 768) {
+    camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 1, 1000);
+} else {
+    camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 2000);
+}
 camera.position.set(10.5, 12.6,-13.3);
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -62,11 +67,17 @@ controls.dampingFactor = 0.01;
 controls.update();
 
 // bound orbit controls
-controls.minPolarAngle = Math.PI / 2.9;
-controls.maxPolarAngle = Math.PI / 2;
-controls.minAzimuthAngle = Math.PI / 1.3;
-controls.maxAzimuthAngle = -Math.PI * 1.2;
-
+if (window.innerWidth <= 768) {
+    controls.minPolarAngle = Math.PI / 2.7;
+    controls.maxPolarAngle = Math.PI / 2.19;
+    controls.minAzimuthAngle = Math.PI / 1.3;
+    controls.maxAzimuthAngle = -Math.PI * 1.2;
+} else {
+    controls.minPolarAngle = Math.PI / 2.9;
+    controls.maxPolarAngle = Math.PI / 2;
+    controls.minAzimuthAngle = Math.PI / 1.3;
+    controls.maxAzimuthAngle = -Math.PI * 1.2;
+}
 // Animation loop
 function animate() {
     controls.update();
