@@ -15,7 +15,7 @@ document.body.appendChild(renderer.domElement);
 // Set up Draco and GLTF Loaders
 const loader = new GLTFLoader();
 const dracoLoader = new DRACOLoader();
-dracoLoader.setDecoderPath('/draco/');
+dracoLoader.setDecoderPath('draco/');
 loader.setDRACOLoader(dracoLoader);
 
 // Lighting setup
@@ -31,7 +31,7 @@ scene.add(light, spotLight);
 
 // Load environment model
 loader.load(
-    'assets/models/EnvironmentProd2.glb',
+    'assets/models/EnvironmentNoLFS.glb',
     (gltf) => {
         scene.add(gltf.scene);
 
