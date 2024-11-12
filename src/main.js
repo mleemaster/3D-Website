@@ -8,7 +8,7 @@ import { gsap } from 'gsap';
 const scene = new THREE.Scene();
 let camera;
 if (window.innerWidth <= 768) {
-    camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 1, 1000);
+    camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 1, 100);
 } else {
     camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 2000);
 }
@@ -70,8 +70,8 @@ controls.update();
 if (window.innerWidth <= 768) {
     controls.minPolarAngle = Math.PI / 2.7;
     controls.maxPolarAngle = Math.PI / 2.19;
-    controls.minAzimuthAngle = Math.PI / 1.3;
-    controls.maxAzimuthAngle = -Math.PI * 1.2;
+    controls.minAzimuthAngle = Math.PI / 1.34;
+    controls.maxAzimuthAngle = -Math.PI * 1.16;
 } else {
     controls.minPolarAngle = Math.PI / 2.9;
     controls.maxPolarAngle = Math.PI / 2;
